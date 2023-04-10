@@ -8,21 +8,24 @@
  <!-- Navigation-->
  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo base_url()?>/"><img src="assets/img/im.png" alt="" /></a>
+                <a class="navbar-brand" href="<?php echo base_url()?>/"><img src="assets/img/im.png" alt="" style="width: 60px; height: 25px;"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/SitiosdeAcapulco">Sitios de interes Acapulco</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/ObrasenProceso">Obras en Proceso</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              SESION
-                            </a>
-                            <ul class="dropdown-menu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/SitiosdeAcapulco">Sitios de interes Acapulco</a></li>
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/ObrasenProceso">Obras en Proceso</a></li>
+                       </ul>
+                       <ul class="nav navbar-nav navbar-right">
+
+                        <li class="nav-item dropdown mx-auto"> 
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="assets/img/team/user3.png" alt="" style="width: 30px; height: 30px;"  >
+                        </a>
+                            <ul class="dropdown-menu dropdown">
                               
                               <?php if(empty(session('nombreUsuario'))){ ?>
                             <li><hr class="dropdown-divider"></li>
@@ -42,9 +45,12 @@
                             </ul>
                           </li>
                     </ul>
+                    
+
                 </div>
             </div>
         </nav>
+       
 <?=$this->endSection()?>
 
 <?=$this->section('content')?>
@@ -53,11 +59,11 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-heading text-uppercase">BANCO DE PROYECTOS</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#Descripcion">Más</a>
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section class="page-section" id="Descripcion">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">¿QUE ES BANCO DE PROYECTOS?</h2>

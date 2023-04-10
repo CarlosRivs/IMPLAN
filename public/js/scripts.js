@@ -52,3 +52,43 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+function validateSize(input) {
+  const fileSize = input.files[0].size / 1024; // in KB
+  if (fileSize < 1 || fileSize > 3072) {
+    alert('El tamaño del archivo debe estar entre 1 KB y 3 MB');
+    // $(file).val(''); //for clearing with Jquery
+  } else {
+    // Proceed further
+  }
+}
+
+  function countChars() {
+  var textarea = document.getElementById("sit_Descripcion");
+  var charCount = document.getElementById("charCount");
+  var maxLength = textarea.getAttribute("maxlength");
+  var currentLength = textarea.value.length;
+  
+  charCount.innerHTML = currentLength + "/" + maxLength + " caracteres";
+  
+  if (currentLength > maxLength) {
+    textarea.classList.add("is-invalid");
+  } else {
+    textarea.classList.remove("is-invalid");
+  }
+}
+
+function countChars() {
+  var textarea = document.getElementById("pro_Descripcion");
+  var charCount = document.getElementById("charCount");
+  var maxLength = textarea.getAttribute("maxlength");
+  var currentLength = textarea.value.length;
+  
+  charCount.innerHTML = currentLength + "/" + maxLength + " caracteres";
+  
+  if (currentLength > maxLength) {
+    textarea.classList.add("is-invalid");
+  } else {
+    textarea.classList.remove("is-invalid");
+  }
+}

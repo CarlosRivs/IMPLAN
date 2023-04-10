@@ -10,33 +10,43 @@ IMPLAN
 <?=$this->section('menu')?>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container"> <?php if (empty(session('nombreUsuario'))) {
-            ?>
-            <a class="nav-link" href="<?php echo base_url()?>/login">INICIAR SESION</a>
-                <?php }else{};?>
-
+            <div class="container">
+                <a class="navbar-brand" href="<?php echo base_url()?>/"><img src="assets/img/im.png" alt="" style="width: 60px; height: 25px;"/></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/SitiosdeAcapulco">Sitios de interes Acapulco</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/ObrasenProceso">Obras en Proceso</a></li>
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              PROYECTOS
-                            </a>
-                            <ul class="dropdown-menu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/SitiosdeAcapulco">Sitios de interes Acapulco</a></li>
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/ObrasenProceso">Obras en Proceso</a></li>
+                       </ul>
+                       <ul class="nav navbar-nav navbar-right">
+
+                        <li class="nav-item dropdown mx-auto"> 
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="assets/img/team/user3.png" alt="" style="width: 30px; height: 30px;"  >
+                        </a>
+                            <ul class="dropdown-menu dropdown">
+                              
+                              <?php if(empty(session('nombreUsuario'))){ ?>
                             <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url()?>/Acapulco">Acapulco</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url()?>/mapa">Mapa</a></li>
+                            <li>
+                                <a class="dropdown-item" href="<?php echo base_url()?>/login">Iniciar Sesion</a>
+                            </li>
+                            <?php }else {?>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#"><?php echo session('nombreUsuario'); ?></a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="<?php echo base_url()?>/login/cerrarSession">Cerrar sesion</a>
+                            </li>
+                        <?php }?>
                             </ul>
-                          </li>-->
+                          </li>
                     </ul>
                 </div>
             </div>
@@ -49,10 +59,10 @@ IMPLAN
     <div class="container">
         <div class="masthead-heading text-uppercase">INSTITUTO MUNICIPAL DE PLANEACIÓN DE ACAPULCO
         </div>
-        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más</a>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#¿quiénes-somos?">Más</a>
     </div>
 </header>
-<section class="page-section" id="services">
+<section class="page-section" id="¿quiénes-somos?">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">¿QUIÉNES SOMOS?</h2>
@@ -393,6 +403,10 @@ IMPLAN
                         </div>
                     </div>
                 </section>
+
+                <h1>Posts de la página de Facebook</h1>
+
+
                 <!-- Clients-->
                 <div class="py-5">
                     <div class="container">

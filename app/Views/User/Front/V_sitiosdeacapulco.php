@@ -8,29 +8,42 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="<?php echo base_url()?>/"><img src="assets/img/im.png" alt="" /></a>
+                <a class="navbar-brand" href="<?php echo base_url()?>/"><img src="assets/img/im.png" alt="" style="width: 60px; height: 25px;" /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/SitiosdeAcapulco">Sitios de interes Acapulco</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>/ObrasenProceso">Obras en Proceso</a></li>
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              PROYECTOS
-                            </a>
-                            <ul class="dropdown-menu">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/SitiosdeAcapulco">Sitios de interes Acapulco</a></li>
+                        <li class="nav-item mx-auto ms-lg-4"><a class="nav-link" href="<?php echo base_url()?>/ObrasenProceso">Obras en Proceso</a></li>
+                       </ul>
+                       <ul class="nav navbar-nav navbar-right">
+
+                        <li class="nav-item dropdown mx-auto"> 
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="assets/img/team/user3.png" alt="" style="width: 30px; height: 30px;"  >
+                        </a>
+                            <ul class="dropdown-menu dropdown">
+                              
+                              <?php if(empty(session('nombreUsuario'))){ ?>
                             <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url()?>/BancodeProyectos">Banco de Proyectos</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url()?>/Acapulco">Acapulco</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="<?php echo base_url()?>/mapa">Mapa</a></li>
+                            <li>
+                                <a class="dropdown-item" href="<?php echo base_url()?>/login">Iniciar Sesion</a>
+                            </li>
+                            <?php }else {?>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="#"><?php echo session('nombreUsuario'); ?></a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="<?php echo base_url()?>/login/cerrarSession">Cerrar sesion</a>
+                            </li>
+                        <?php }?>
                             </ul>
-                          </li>-->
+                          </li>
                     </ul>
                 </div>
             </div>
@@ -43,11 +56,11 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-heading text-uppercase">PUNTOS DE INTERES DE ACAPULCO</div>
-                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Más</a>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#Descripcion">Más</a>
             </div>
         </header>
         <!-- Services-->
-        <section class="page-section" id="services">
+        <section class="page-section" id="Descripcion">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">¿QUE ES SITIOS DE INTERES DE ACAPULCO?</h2>
@@ -228,6 +241,7 @@
             </div>
         </section>
 
+
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
@@ -247,13 +261,100 @@
         </footer>
         <!-- Portfolio Modals-->
     
-        
+<!-- Botón que abre la ventana modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">
+  Abrir ventana modal
+</button>
+
+<!-- Ventana modal -->
+<div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="miModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="miModalLabel">Ventana modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Aquí va el contenido de la ventana modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
 
 <?=$this->endSection()?>
 
 <?=$this->section('js')?>
 <script src="<?php echo base_url()?>/js/scripts.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.2/dist/sweetalert2.all.min.js"></script>
+
+<script>
+let timer;
+
+function showAlert() {
+  Swal.fire({
+    title: '¡Recomendación!',
+    html: '<p>Recomendaciones de lugares a donde ir.</p>' +
+          '<form id="myForm">' +
+          '  <!-- Agrega los campos del formulario aquí -->' +
+          '</form>',
+    confirmButtonText: 'Ir',
+    showCloseButton: true,
+    position: 'bottom',
+    timer: 3000,
+    timerProgressBar: true,
+    allowOutsideClick: false,
+    customClass: {
+      popup: 'my-swal-size'
+    },
+    willOpen: function() {
+      timer = setTimeout(function() {
+        Swal.close();
+      }, 3000);
+    },
+    preConfirm: function() {
+      clearTimeout(timer); // Detener el timer aquí
+      return new Promise(function(resolve) {
+        $('#myForm').submit(function(event) {
+          event.preventDefault();
+          resolve();
+        });
+        $('#myForm').append('<button type="submit" class="btn btn-primary">Enviar</button>');
+      });
+    }
+  });
+}
+
+showAlert();
+
+</script>
+
+<style>
+    .my-swal-size .swal2-popup {
+  width: 30px !important;
+  height: 30px !important;
+  font-size: 14px !important;
+  margin-right: 50px !important;
+  margin-bottom: -75px !important;
+}
+
+.my-swal-size .swal2-title {
+  font-size: 14px !important;
+}
+
+.my-swal-size .swal2-content {
+  font-size: 14px !important;
+}
+
+.my-swal-size .swal2-confirm {
+  font-size: 14px !important;
+}
+</style>
+
 <?=$this->endSection()?>

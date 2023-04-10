@@ -125,7 +125,7 @@ class ObrasCRUD extends Controller{
 
             if($imagen = $this->request->getFile('obr_Foto')){
 
-                $datosObra = $sitio->where('obr_ID',$obr_ID)->first();
+                $datosObra = $obra->where('obr_ID',$obr_ID)->first();
 
                 $ruta = ('../public/resources/img/'.$datosObra['obr_Foto']);
                 unlink($ruta);
@@ -135,7 +135,7 @@ class ObrasCRUD extends Controller{
                 $imagen->move('../public/resources/img/',$nuevoNombre);
     
                 $datos = ['obr_Foto'=>$nuevoNombre];
-                $sitio->update($obr_ID,$datos);
+                $obra->update($obr_ID,$datos);
             }
         }
         return $this->response->redirect(site_url('/Admin/ListarObras'));
